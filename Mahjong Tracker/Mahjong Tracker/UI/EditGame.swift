@@ -9,6 +9,10 @@ import SwiftUI
 
 struct EditGame: View {
     
+    @Environment(\.dismiss) private var dismiss
+    
+    @Environment(\.managedObjectContext) private var moc
+    
     @State private var isWin = 1
     @State private var date = Date()
     @State private var pattern: Pattern? = nil
@@ -26,7 +30,7 @@ struct EditGame: View {
             return
         }
         _isWin = State(initialValue: g.isWin ? 1 : 0)
-        _date = State(initialValue: Date()) // TODO: replace with actual date
+        _date = State(initialValue: g.date) // TODO: replace with actual date
         _pattern = State(initialValue: g.pattern)
         _isConcealed = State(initialValue: g.isConcealed)
         _isJokerless = State(initialValue: g.isJokerless)
@@ -67,7 +71,7 @@ struct EditGame: View {
                     TextField(isWin == 1 ? "Profit" : "Loss", text: $profitOverride)
                 }
                 
-                Button(action: {}) {
+                Button(action: save) {
                     HStack {
                         Spacer()
                         Text("Save")
@@ -75,19 +79,59 @@ struct EditGame: View {
                     }
                 }
                 
-                Section {
-                    Button(action: {}) {
-                        HStack {
-                            Spacer()
-                            Text("Delete")
-                                .foregroundColor(.red)
-                            Spacer()
+                if game != nil {
+                    Section {
+                        Button(action: delete) {
+                            HStack {
+                                Spacer()
+                                Text("Delete")
+                                    .foregroundColor(.red)
+                                Spacer()
+                            }
                         }
                     }
                 }
             }
             .background(Color(UITableView.appearance().backgroundColor ?? .red))
-            .navigationTitle("Edit Game")
+            .navigationTitle(game == nil ? "New Game" : "Edit Game")
+    }
+    
+    
+    func save() {
+        
+        if pattern == nil {
+            return
+        }
+        
+        var g: Game
+        if game == nil {
+            g = Game(context: moc)
+            g.id = UUID()
+        } else {
+            g = game!
+        }
+        
+        g.isWin = isWin == 1
+        g.date = date
+        g.patternId = pattern!.id
+        g.isConcealed = isConcealed
+        g.isJokerless = isJokerless
+        g.isWinOnDiscard = g.isWin && isWinOnDiscard
+        g.isDiscarder = !g.isWin && isDiscarder
+        g.totalWinnings = abs(Float(profitOverride.replacingOccurrences(of: "$", with: ""))!)
+        
+        try? moc.save()
+        dismiss()
+    }
+    
+    func delete() {
+        if game == nil {
+            return
+        }
+        
+        moc.delete(game!)
+        try? moc.save()
+        dismiss()
     }
 }
 

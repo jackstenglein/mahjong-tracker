@@ -26,4 +26,15 @@ public struct Card {
         }
         return result
     }
+    
+    func getPattern(id: String) -> Pattern? {
+        for group in groups {
+            for pattern in group.patterns {
+                if pattern.id == id {
+                    return pattern
+                }
+            }
+        }
+        return nil
+    }
 }

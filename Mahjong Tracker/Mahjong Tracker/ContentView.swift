@@ -17,28 +17,13 @@ struct ContentView: View {
     private var items: FetchedResults<Item>
 
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                    } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
-                    }
-                }
-                .onDelete(perform: deleteItems)
+        TabView {
+            GameHistory(games: [
+                Game(id: "1", date: "5/5/22", isWin: true, pattern: card2022.groups[0].patterns[0], isConcealed: false, isJokerless: false, isWinOnDiscard: false, isDiscarder: false, totalWinnings: 1.5),
+                Game(id: "2", date: "5/6/22", isWin: false, pattern: card2022.groups[1].patterns[1], isConcealed: false, isJokerless: false, isWinOnDiscard: false, isDiscarder: false, totalWinnings: -0.75)
+            ]).tabItem {
+                Label("Game History", systemImage: "clock")
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-            }
-            Text("Select an item")
         }
     }
 

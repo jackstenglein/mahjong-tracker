@@ -18,8 +18,25 @@ struct EditGame: View {
     @State private var isDiscarder = false
     @State private var profitOverride: String = ""
     
+    let game: Game?
+    
+    init(game: Game?) {
+        guard let g = game else {
+            self.game = game
+            return
+        }
+        _isWin = State(initialValue: g.isWin ? 1 : 0)
+        _date = State(initialValue: Date()) // TODO: replace with actual date
+        _pattern = State(initialValue: g.pattern)
+        _isConcealed = State(initialValue: g.isConcealed)
+        _isJokerless = State(initialValue: g.isJokerless)
+        _isWinOnDiscard = State(initialValue: g.isWin ? g.isWinOnDiscard : false)
+        _isDiscarder = State(initialValue: g.isWin ? false : g.isDiscarder)
+        _profitOverride = State(initialValue: String(format: "$%.2f", g.totalWinnings))
+        self.game = g
+    }
+    
     var body: some View {
-        NavigationView {
             Form {
                 Section(header: Text("General")) {
                     Picker("Game Result", selection: $isWin) {
@@ -71,13 +88,12 @@ struct EditGame: View {
             }
             .background(Color(UITableView.appearance().backgroundColor ?? .red))
             .navigationTitle("Edit Game")
-        }
     }
 }
 
 struct EditGame_Previews: PreviewProvider {
     static var previews: some View {
-        EditGame()
+        EditGame(game: nil)
             .previewDevice("iPhone 13")
     }
 }

@@ -14,7 +14,7 @@ struct GameHistory: View {
     var body: some View {
         NavigationView {
             List(games) { game in
-                NavigationLink(destination: EmptyView()) {
+                NavigationLink(destination: EditGame(game: game)) {
                     HStack {
                         VStack(alignment: .leading, spacing: 6) {
                             Text(game.date)
@@ -44,8 +44,8 @@ struct GameHistory: View {
 struct GameHistory_Previews: PreviewProvider {
     static var previews: some View {
         GameHistory(games: [
-            Game(id: "1", date: "5/5/22", isWin: true, pattern: card2022.groups[0].patterns[0], isConcealed: false, isJokerless: false, isWinOnDiscard: false, isDiscarder: false, totalWinnings: 1.5),
-            Game(id: "2", date: "5/6/22", isWin: false, pattern: card2022.groups[1].patterns[1], isConcealed: false, isJokerless: false, isWinOnDiscard: false, isDiscarder: false, totalWinnings: -0.75)
+            Game(id: "1", date: "5/5/22", isWin: true, pattern: card2022.groups[0].patterns[0], isConcealed: false, isJokerless: false, isWinOnDiscard: true, isDiscarder: false, totalWinnings: 1.5),
+            Game(id: "2", date: "5/6/22", isWin: false, pattern: card2022.groups[1].patterns[1], isConcealed: true, isJokerless: true, isWinOnDiscard: true, isDiscarder: true, totalWinnings: -0.75)
         ])
     }
 }

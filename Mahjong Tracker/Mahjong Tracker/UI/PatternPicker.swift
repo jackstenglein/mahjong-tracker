@@ -20,6 +20,7 @@ struct PatternPicker: View {
                     Picker("", selection: $pattern) {
                         ForEach(g.patterns) { p in
                             Text(p.attributedTitle).tag(p as Pattern?)
+                                .multilineTextAlignment(.center)
                         }
                     }
                     .pickerStyle(.inline)

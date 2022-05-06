@@ -1,0 +1,609 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C986A87B2824B7E800FB0A74 /* Mahjong_TrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986A87A2824B7E800FB0A74 /* Mahjong_TrackerApp.swift */; };
+		C986A87D2824B7E800FB0A74 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986A87C2824B7E800FB0A74 /* ContentView.swift */; };
+		C986A87F2824B7EC00FB0A74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C986A87E2824B7EC00FB0A74 /* Assets.xcassets */; };
+		C986A8822824B7EC00FB0A74 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C986A8812824B7EC00FB0A74 /* Preview Assets.xcassets */; };
+		C986A8842824B7EC00FB0A74 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986A8832824B7EC00FB0A74 /* Persistence.swift */; };
+		C986A8872824B7EC00FB0A74 /* Mahjong_Tracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C986A8852824B7EC00FB0A74 /* Mahjong_Tracker.xcdatamodeld */; };
+		C986A8912824B7EC00FB0A74 /* Mahjong_TrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986A8902824B7EC00FB0A74 /* Mahjong_TrackerTests.swift */; };
+		C986A89B2824B7EC00FB0A74 /* Mahjong_TrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986A89A2824B7EC00FB0A74 /* Mahjong_TrackerUITests.swift */; };
+		C986A89D2824B7EC00FB0A74 /* Mahjong_TrackerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986A89C2824B7EC00FB0A74 /* Mahjong_TrackerUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C986A88D2824B7EC00FB0A74 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C986A86F2824B7E700FB0A74 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C986A8762824B7E800FB0A74;
+			remoteInfo = "Mahjong Tracker";
+		};
+		C986A8972824B7EC00FB0A74 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C986A86F2824B7E700FB0A74 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C986A8762824B7E800FB0A74;
+			remoteInfo = "Mahjong Tracker";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C986A8772824B7E800FB0A74 /* Mahjong Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mahjong Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C986A87A2824B7E800FB0A74 /* Mahjong_TrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mahjong_TrackerApp.swift; sourceTree = "<group>"; };
+		C986A87C2824B7E800FB0A74 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C986A87E2824B7EC00FB0A74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C986A8812824B7EC00FB0A74 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C986A8832824B7EC00FB0A74 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		C986A8862824B7EC00FB0A74 /* Mahjong_Tracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Mahjong_Tracker.xcdatamodel; sourceTree = "<group>"; };
+		C986A88C2824B7EC00FB0A74 /* Mahjong TrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mahjong TrackerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C986A8902824B7EC00FB0A74 /* Mahjong_TrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mahjong_TrackerTests.swift; sourceTree = "<group>"; };
+		C986A8962824B7EC00FB0A74 /* Mahjong TrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mahjong TrackerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C986A89A2824B7EC00FB0A74 /* Mahjong_TrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mahjong_TrackerUITests.swift; sourceTree = "<group>"; };
+		C986A89C2824B7EC00FB0A74 /* Mahjong_TrackerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mahjong_TrackerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C986A8742824B7E800FB0A74 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C986A8892824B7EC00FB0A74 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C986A8932824B7EC00FB0A74 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C986A86E2824B7E700FB0A74 = {
+			isa = PBXGroup;
+			children = (
+				C986A8792824B7E800FB0A74 /* Mahjong Tracker */,
+				C986A88F2824B7EC00FB0A74 /* Mahjong TrackerTests */,
+				C986A8992824B7EC00FB0A74 /* Mahjong TrackerUITests */,
+				C986A8782824B7E800FB0A74 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C986A8782824B7E800FB0A74 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C986A8772824B7E800FB0A74 /* Mahjong Tracker.app */,
+				C986A88C2824B7EC00FB0A74 /* Mahjong TrackerTests.xctest */,
+				C986A8962824B7EC00FB0A74 /* Mahjong TrackerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C986A8792824B7E800FB0A74 /* Mahjong Tracker */ = {
+			isa = PBXGroup;
+			children = (
+				C986A87A2824B7E800FB0A74 /* Mahjong_TrackerApp.swift */,
+				C986A87C2824B7E800FB0A74 /* ContentView.swift */,
+				C986A87E2824B7EC00FB0A74 /* Assets.xcassets */,
+				C986A8832824B7EC00FB0A74 /* Persistence.swift */,
+				C986A8852824B7EC00FB0A74 /* Mahjong_Tracker.xcdatamodeld */,
+				C986A8802824B7EC00FB0A74 /* Preview Content */,
+			);
+			path = "Mahjong Tracker";
+			sourceTree = "<group>";
+		};
+		C986A8802824B7EC00FB0A74 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C986A8812824B7EC00FB0A74 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C986A88F2824B7EC00FB0A74 /* Mahjong TrackerTests */ = {
+			isa = PBXGroup;
+			children = (
+				C986A8902824B7EC00FB0A74 /* Mahjong_TrackerTests.swift */,
+			);
+			path = "Mahjong TrackerTests";
+			sourceTree = "<group>";
+		};
+		C986A8992824B7EC00FB0A74 /* Mahjong TrackerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C986A89A2824B7EC00FB0A74 /* Mahjong_TrackerUITests.swift */,
+				C986A89C2824B7EC00FB0A74 /* Mahjong_TrackerUITestsLaunchTests.swift */,
+			);
+			path = "Mahjong TrackerUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C986A8762824B7E800FB0A74 /* Mahjong Tracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C986A8A02824B7EC00FB0A74 /* Build configuration list for PBXNativeTarget "Mahjong Tracker" */;
+			buildPhases = (
+				C986A8732824B7E800FB0A74 /* Sources */,
+				C986A8742824B7E800FB0A74 /* Frameworks */,
+				C986A8752824B7E800FB0A74 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Mahjong Tracker";
+			productName = "Mahjong Tracker";
+			productReference = C986A8772824B7E800FB0A74 /* Mahjong Tracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C986A88B2824B7EC00FB0A74 /* Mahjong TrackerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C986A8A32824B7EC00FB0A74 /* Build configuration list for PBXNativeTarget "Mahjong TrackerTests" */;
+			buildPhases = (
+				C986A8882824B7EC00FB0A74 /* Sources */,
+				C986A8892824B7EC00FB0A74 /* Frameworks */,
+				C986A88A2824B7EC00FB0A74 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C986A88E2824B7EC00FB0A74 /* PBXTargetDependency */,
+			);
+			name = "Mahjong TrackerTests";
+			productName = "Mahjong TrackerTests";
+			productReference = C986A88C2824B7EC00FB0A74 /* Mahjong TrackerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C986A8952824B7EC00FB0A74 /* Mahjong TrackerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C986A8A62824B7EC00FB0A74 /* Build configuration list for PBXNativeTarget "Mahjong TrackerUITests" */;
+			buildPhases = (
+				C986A8922824B7EC00FB0A74 /* Sources */,
+				C986A8932824B7EC00FB0A74 /* Frameworks */,
+				C986A8942824B7EC00FB0A74 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C986A8982824B7EC00FB0A74 /* PBXTargetDependency */,
+			);
+			name = "Mahjong TrackerUITests";
+			productName = "Mahjong TrackerUITests";
+			productReference = C986A8962824B7EC00FB0A74 /* Mahjong TrackerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C986A86F2824B7E700FB0A74 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					C986A8762824B7E800FB0A74 = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
+					C986A88B2824B7EC00FB0A74 = {
+						CreatedOnToolsVersion = 13.3.1;
+						TestTargetID = C986A8762824B7E800FB0A74;
+					};
+					C986A8952824B7EC00FB0A74 = {
+						CreatedOnToolsVersion = 13.3.1;
+						TestTargetID = C986A8762824B7E800FB0A74;
+					};
+				};
+			};
+			buildConfigurationList = C986A8722824B7E700FB0A74 /* Build configuration list for PBXProject "Mahjong Tracker" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C986A86E2824B7E700FB0A74;
+			productRefGroup = C986A8782824B7E800FB0A74 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C986A8762824B7E800FB0A74 /* Mahjong Tracker */,
+				C986A88B2824B7EC00FB0A74 /* Mahjong TrackerTests */,
+				C986A8952824B7EC00FB0A74 /* Mahjong TrackerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C986A8752824B7E800FB0A74 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C986A8822824B7EC00FB0A74 /* Preview Assets.xcassets in Resources */,
+				C986A87F2824B7EC00FB0A74 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C986A88A2824B7EC00FB0A74 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C986A8942824B7EC00FB0A74 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C986A8732824B7E800FB0A74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C986A8842824B7EC00FB0A74 /* Persistence.swift in Sources */,
+				C986A87D2824B7E800FB0A74 /* ContentView.swift in Sources */,
+				C986A87B2824B7E800FB0A74 /* Mahjong_TrackerApp.swift in Sources */,
+				C986A8872824B7EC00FB0A74 /* Mahjong_Tracker.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C986A8882824B7EC00FB0A74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C986A8912824B7EC00FB0A74 /* Mahjong_TrackerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C986A8922824B7EC00FB0A74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C986A89D2824B7EC00FB0A74 /* Mahjong_TrackerUITestsLaunchTests.swift in Sources */,
+				C986A89B2824B7EC00FB0A74 /* Mahjong_TrackerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C986A88E2824B7EC00FB0A74 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C986A8762824B7E800FB0A74 /* Mahjong Tracker */;
+			targetProxy = C986A88D2824B7EC00FB0A74 /* PBXContainerItemProxy */;
+		};
+		C986A8982824B7EC00FB0A74 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C986A8762824B7E800FB0A74 /* Mahjong Tracker */;
+			targetProxy = C986A8972824B7EC00FB0A74 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		C986A89E2824B7EC00FB0A74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C986A89F2824B7EC00FB0A74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C986A8A12824B7EC00FB0A74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Mahjong Tracker/Preview Content\"";
+				DEVELOPMENT_TEAM = PHLWVAL8GP;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jackstenglein.Mahjong-Tracker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C986A8A22824B7EC00FB0A74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Mahjong Tracker/Preview Content\"";
+				DEVELOPMENT_TEAM = PHLWVAL8GP;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jackstenglein.Mahjong-Tracker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C986A8A42824B7EC00FB0A74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PHLWVAL8GP;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jackstenglein.Mahjong-TrackerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mahjong Tracker.app/Mahjong Tracker";
+			};
+			name = Debug;
+		};
+		C986A8A52824B7EC00FB0A74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PHLWVAL8GP;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jackstenglein.Mahjong-TrackerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mahjong Tracker.app/Mahjong Tracker";
+			};
+			name = Release;
+		};
+		C986A8A72824B7EC00FB0A74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PHLWVAL8GP;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jackstenglein.Mahjong-TrackerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Mahjong Tracker";
+			};
+			name = Debug;
+		};
+		C986A8A82824B7EC00FB0A74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PHLWVAL8GP;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jackstenglein.Mahjong-TrackerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Mahjong Tracker";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C986A8722824B7E700FB0A74 /* Build configuration list for PBXProject "Mahjong Tracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C986A89E2824B7EC00FB0A74 /* Debug */,
+				C986A89F2824B7EC00FB0A74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C986A8A02824B7EC00FB0A74 /* Build configuration list for PBXNativeTarget "Mahjong Tracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C986A8A12824B7EC00FB0A74 /* Debug */,
+				C986A8A22824B7EC00FB0A74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C986A8A32824B7EC00FB0A74 /* Build configuration list for PBXNativeTarget "Mahjong TrackerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C986A8A42824B7EC00FB0A74 /* Debug */,
+				C986A8A52824B7EC00FB0A74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C986A8A62824B7EC00FB0A74 /* Build configuration list for PBXNativeTarget "Mahjong TrackerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C986A8A72824B7EC00FB0A74 /* Debug */,
+				C986A8A82824B7EC00FB0A74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C986A8852824B7EC00FB0A74 /* Mahjong_Tracker.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C986A8862824B7EC00FB0A74 /* Mahjong_Tracker.xcdatamodel */,
+			);
+			currentVersion = C986A8862824B7EC00FB0A74 /* Mahjong_Tracker.xcdatamodel */;
+			path = Mahjong_Tracker.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C986A86F2824B7E700FB0A74 /* Project object */;
+}

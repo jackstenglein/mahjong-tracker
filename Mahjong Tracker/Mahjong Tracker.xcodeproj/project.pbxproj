@@ -16,6 +16,11 @@
 		C986A8912824B7EC00FB0A74 /* Mahjong_TrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986A8902824B7EC00FB0A74 /* Mahjong_TrackerTests.swift */; };
 		C986A89B2824B7EC00FB0A74 /* Mahjong_TrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986A89A2824B7EC00FB0A74 /* Mahjong_TrackerUITests.swift */; };
 		C986A89D2824B7EC00FB0A74 /* Mahjong_TrackerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986A89C2824B7EC00FB0A74 /* Mahjong_TrackerUITestsLaunchTests.swift */; };
+		C986A8AB2824B8AF00FB0A74 /* Pattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986A8AA2824B8AF00FB0A74 /* Pattern.swift */; };
+		C986A8AD2824B93400FB0A74 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986A8AC2824B93400FB0A74 /* Component.swift */; };
+		C986A8B02824BA1500FB0A74 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986A8AF2824BA1500FB0A74 /* Card.swift */; };
+		C986A8B22824BA7F00FB0A74 /* Card2022.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986A8B12824BA7F00FB0A74 /* Card2022.swift */; };
+		C986A8B42824BD1100FB0A74 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986A8B32824BD1100FB0A74 /* Game.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +53,11 @@
 		C986A8962824B7EC00FB0A74 /* Mahjong TrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mahjong TrackerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C986A89A2824B7EC00FB0A74 /* Mahjong_TrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mahjong_TrackerUITests.swift; sourceTree = "<group>"; };
 		C986A89C2824B7EC00FB0A74 /* Mahjong_TrackerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mahjong_TrackerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C986A8AA2824B8AF00FB0A74 /* Pattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pattern.swift; sourceTree = "<group>"; };
+		C986A8AC2824B93400FB0A74 /* Component.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
+		C986A8AF2824BA1500FB0A74 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		C986A8B12824BA7F00FB0A74 /* Card2022.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card2022.swift; sourceTree = "<group>"; };
+		C986A8B32824BD1100FB0A74 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +108,8 @@
 		C986A8792824B7E800FB0A74 /* Mahjong Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				C986A8AE2824B9F800FB0A74 /* Data */,
+				C986A8A92824B89D00FB0A74 /* Model */,
 				C986A87A2824B7E800FB0A74 /* Mahjong_TrackerApp.swift */,
 				C986A87C2824B7E800FB0A74 /* ContentView.swift */,
 				C986A87E2824B7EC00FB0A74 /* Assets.xcassets */,
@@ -131,6 +143,25 @@
 				C986A89C2824B7EC00FB0A74 /* Mahjong_TrackerUITestsLaunchTests.swift */,
 			);
 			path = "Mahjong TrackerUITests";
+			sourceTree = "<group>";
+		};
+		C986A8A92824B89D00FB0A74 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C986A8AA2824B8AF00FB0A74 /* Pattern.swift */,
+				C986A8AC2824B93400FB0A74 /* Component.swift */,
+				C986A8AF2824BA1500FB0A74 /* Card.swift */,
+				C986A8B32824BD1100FB0A74 /* Game.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C986A8AE2824B9F800FB0A74 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C986A8B12824BA7F00FB0A74 /* Card2022.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +295,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C986A8842824B7EC00FB0A74 /* Persistence.swift in Sources */,
+				C986A8B42824BD1100FB0A74 /* Game.swift in Sources */,
+				C986A8B22824BA7F00FB0A74 /* Card2022.swift in Sources */,
+				C986A8AD2824B93400FB0A74 /* Component.swift in Sources */,
+				C986A8B02824BA1500FB0A74 /* Card.swift in Sources */,
+				C986A8AB2824B8AF00FB0A74 /* Pattern.swift in Sources */,
 				C986A87D2824B7E800FB0A74 /* ContentView.swift in Sources */,
 				C986A87B2824B7E800FB0A74 /* Mahjong_TrackerApp.swift in Sources */,
 				C986A8872824B7EC00FB0A74 /* Mahjong_Tracker.xcdatamodeld in Sources */,

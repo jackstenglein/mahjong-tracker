@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-public struct Component {
+public struct Component: Hashable {
     let text: String
     let color: Color
 }

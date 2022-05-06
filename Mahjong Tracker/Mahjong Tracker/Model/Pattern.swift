@@ -8,8 +8,8 @@
 import Foundation
 import SwiftUI
 
-public struct Pattern {
-    let id: String
+public struct Pattern: Identifiable, Hashable {
+    public let id: String
     let description: String
     let value: Int
     let isConcealed: Bool

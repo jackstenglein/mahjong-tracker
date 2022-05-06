@@ -8,9 +8,9 @@
 import Foundation
 
 
-public class Game {
+public class Game: Identifiable {
     
-    var id: String = ""
+    public var id: String = ""
     var date: String = ""
     var isWin: Bool
     var pattern: Pattern?
@@ -30,5 +30,17 @@ public class Game {
         self.isWinOnDiscard = isWinOnDiscard
         self.isDiscarder = isDiscarder
         self.totalWinnings = totalWinnings
+    }
+    
+    var attributedValue: AttributedString {
+        if (isWin) {
+            var result = AttributedString(String(format: "$%.2f", totalWinnings))
+            result.foregroundColor = .green
+            return result
+        }
+        
+        var result = AttributedString(String(format: "$(%.2f)", totalWinnings))
+        result.foregroundColor = .red
+        return result
     }
 }

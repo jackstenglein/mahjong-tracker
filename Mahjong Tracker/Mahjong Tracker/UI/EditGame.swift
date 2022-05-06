@@ -68,7 +68,7 @@ struct EditGame: View {
                 }
                 
                 Section(header: Text(isWin == 1 ? "Profit" : "Loss")) {
-                    TextField(isWin == 1 ? "Profit" : "Loss", text: $profitOverride)
+                    DecimalTextField(isWin == 1 ? "Profit" : "Loss", text: $profitOverride)
                 }
                 
                 Button(action: save) {
@@ -119,6 +119,8 @@ struct EditGame: View {
         g.isWinOnDiscard = g.isWin && isWinOnDiscard
         g.isDiscarder = !g.isWin && isDiscarder
         g.totalWinnings = abs(Float(profitOverride.replacingOccurrences(of: "$", with: ""))!)
+        
+        print("Saving game \(g)")
         
         try? moc.save()
         dismiss()

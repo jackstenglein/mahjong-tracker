@@ -27,6 +27,11 @@
 		C986A8C22824F02C00FB0A74 /* Game+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986A8C12824F02C00FB0A74 /* Game+CoreDataClass.swift */; };
 		C986A8C42824F6C500FB0A74 /* Game+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986A8C32824F6C500FB0A74 /* Game+CoreDataProperties.swift */; };
 		C986A8C62824F99500FB0A74 /* Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986A8C52824F99500FB0A74 /* Statistics.swift */; };
+		C9AB20A62825BA3E00700142 /* LineChartView in Frameworks */ = {isa = PBXBuildFile; productRef = C9AB20A52825BA3E00700142 /* LineChartView */; };
+		C9AB20A82825C36C00700142 /* NumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AB20A72825C36C00700142 /* NumberTextField.swift */; };
+		C9AB20AA2825C96B00700142 /* DetailedWinStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AB20A92825C96B00700142 /* DetailedWinStatistics.swift */; };
+		C9AB20AC2825C9EC00700142 /* StatisticsCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AB20AB2825C9EC00700142 /* StatisticsCalculator.swift */; };
+		C9AB20AE2825D05700700142 /* PatternWinList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AB20AD2825D05700700142 /* PatternWinList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +75,10 @@
 		C986A8C12824F02C00FB0A74 /* Game+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Game+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C986A8C32824F6C500FB0A74 /* Game+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Game+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C986A8C52824F99500FB0A74 /* Statistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
+		C9AB20A72825C36C00700142 /* NumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberTextField.swift; sourceTree = "<group>"; };
+		C9AB20A92825C96B00700142 /* DetailedWinStatistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedWinStatistics.swift; sourceTree = "<group>"; };
+		C9AB20AB2825C9EC00700142 /* StatisticsCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsCalculator.swift; sourceTree = "<group>"; };
+		C9AB20AD2825D05700700142 /* PatternWinList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternWinList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9AB20A62825BA3E00700142 /* LineChartView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				C986A8B12824BA7F00FB0A74 /* Card2022.swift */,
+				C9AB20AB2825C9EC00700142 /* StatisticsCalculator.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -186,6 +197,9 @@
 				C986A8BA2824CA1400FB0A74 /* EditGame.swift */,
 				C986A8BC2824D62A00FB0A74 /* PatternPicker.swift */,
 				C986A8C52824F99500FB0A74 /* Statistics.swift */,
+				C9AB20A72825C36C00700142 /* NumberTextField.swift */,
+				C9AB20A92825C96B00700142 /* DetailedWinStatistics.swift */,
+				C9AB20AD2825D05700700142 /* PatternWinList.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -206,6 +220,9 @@
 			dependencies = (
 			);
 			name = "Mahjong Tracker";
+			packageProductDependencies = (
+				C9AB20A52825BA3E00700142 /* LineChartView */,
+			);
 			productName = "Mahjong Tracker";
 			productReference = C986A8772824B7E800FB0A74 /* Mahjong Tracker.app */;
 			productType = "com.apple.product-type.application";
@@ -278,6 +295,9 @@
 				Base,
 			);
 			mainGroup = C986A86E2824B7E700FB0A74;
+			packageReferences = (
+				C9AB20A42825BA3E00700142 /* XCRemoteSwiftPackageReference "LineChartView" */,
+			);
 			productRefGroup = C986A8782824B7E800FB0A74 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -322,6 +342,8 @@
 			files = (
 				C986A8842824B7EC00FB0A74 /* Persistence.swift in Sources */,
 				C986A8B22824BA7F00FB0A74 /* Card2022.swift in Sources */,
+				C9AB20AC2825C9EC00700142 /* StatisticsCalculator.swift in Sources */,
+				C9AB20A82825C36C00700142 /* NumberTextField.swift in Sources */,
 				C986A8AD2824B93400FB0A74 /* Component.swift in Sources */,
 				C986A8C22824F02C00FB0A74 /* Game+CoreDataClass.swift in Sources */,
 				C986A8BB2824CA1400FB0A74 /* EditGame.swift in Sources */,
@@ -329,6 +351,8 @@
 				C986A8B02824BA1500FB0A74 /* Card.swift in Sources */,
 				C986A8C42824F6C500FB0A74 /* Game+CoreDataProperties.swift in Sources */,
 				C986A8AB2824B8AF00FB0A74 /* Pattern.swift in Sources */,
+				C9AB20AA2825C96B00700142 /* DetailedWinStatistics.swift in Sources */,
+				C9AB20AE2825D05700700142 /* PatternWinList.swift in Sources */,
 				C986A87D2824B7E800FB0A74 /* ContentView.swift in Sources */,
 				C986A87B2824B7E800FB0A74 /* Mahjong_TrackerApp.swift in Sources */,
 				C986A8BD2824D62A00FB0A74 /* PatternPicker.swift in Sources */,
@@ -659,6 +683,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C9AB20A42825BA3E00700142 /* XCRemoteSwiftPackageReference "LineChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Jonathan-Gander/LineChartView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C9AB20A52825BA3E00700142 /* LineChartView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9AB20A42825BA3E00700142 /* XCRemoteSwiftPackageReference "LineChartView" */;
+			productName = LineChartView;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		C986A8852824B7EC00FB0A74 /* Mahjong_Tracker.xcdatamodeld */ = {

@@ -17,11 +17,11 @@ struct GameHistory: View {
                 NavigationLink(destination: EditGame(game: game)) {
                     HStack {
                         VStack(alignment: .leading, spacing: 6) {
-                            Text(game.date, style: .date)
+                            Text(game.isFault ? Date() : game.date, style: .date)
                                 .font(.system(size: 16))
                                 
                                 
-                            if game.pattern != nil {
+                            if !game.isFault && game.pattern != nil {
                                 Text(game.pattern!.attributedTitle)
                                     .font(.subheadline)
                             }
@@ -30,7 +30,7 @@ struct GameHistory: View {
                         
                         Spacer()
                         
-                        Text(game.attributedValue)
+                        Text(game.isFault ? "" : game.attributedValue)
                             .fontWeight(.bold)
                     }
                 }

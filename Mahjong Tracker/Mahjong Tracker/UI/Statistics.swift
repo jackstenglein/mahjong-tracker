@@ -123,8 +123,6 @@ struct Statistics: View {
         
         for game in games {
             let date = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: game.date)
-            print("Game \(game)")
-            print("Date \(String(describing: date))")
             let income: Double = dateToIncome[date!] ?? 0
             
             if game.isWin {
@@ -134,7 +132,6 @@ struct Statistics: View {
             }
         }
         
-        print("Date to income: \(dateToIncome)")
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/YY"
         let sortedDates = dateToIncome.keys.sorted(by: { $0.compare($1) == .orderedAscending })

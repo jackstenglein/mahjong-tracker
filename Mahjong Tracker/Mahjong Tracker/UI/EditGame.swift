@@ -21,12 +21,17 @@ struct EditGame: View {
     @State private var isWinOnDiscard = false
     @State private var isDiscarder = false
     @State private var profitOverride: String = ""
+    @State private var error: String = ""
     
     let game: Game?
     
     init(game: Game?) {
         guard let g = game else {
-            self.game = game
+            self.game = nil
+            return
+        }
+        if g.isFault {
+            self.game = nil
             return
         }
         _isWin = State(initialValue: g.isWin ? 1 : 0)
@@ -71,15 +76,17 @@ struct EditGame: View {
                     DecimalTextField(isWin == 1 ? "Profit" : "Loss", text: $profitOverride)
                 }
                 
-                Button(action: save) {
-                    HStack {
-                        Spacer()
-                        Text("Save")
-                        Spacer()
+                Section(footer: saveFooter) {
+                    Button(action: save) {
+                        HStack {
+                            Spacer()
+                            Text("Save")
+                            Spacer()
+                        }
                     }
                 }
                 
-                if game != nil {
+                if game != nil && !game!.isFault {
                     Section {
                         Button(action: delete) {
                             HStack {
@@ -96,10 +103,28 @@ struct EditGame: View {
             .navigationTitle(game == nil ? "New Game" : "Edit Game")
     }
     
+    var saveFooter: some View {
+        HStack {
+            Spacer()
+            Text(error).foregroundColor(.red)
+            Spacer()
+        }
+    }
+    
     
     func save() {
         
         if pattern == nil {
+            error = "Pattern is required"
+            return
+        }
+        
+        if profitOverride.count == 0 {
+            if isWin == 1 {
+                error = "Profit is required"
+            } else {
+                error = "Loss is required"
+            }
             return
         }
         
@@ -132,8 +157,21 @@ struct EditGame: View {
         }
         
         moc.delete(game!)
-        try? moc.save()
+        NotificationCenter.default.post(name: .didDeleteGame, object: nil)
         dismiss()
+        
+//        print("Deleting")
+
+//        print("Saving")
+//        try? moc.save()
+//        print("Dismissing")
+//        dismiss()
+    }
+}
+
+extension Notification.Name {
+    static var didDeleteGame: Notification.Name {
+        return Notification.Name("DeleteGame")
     }
 }
 

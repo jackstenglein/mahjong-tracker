@@ -38,7 +38,10 @@ struct StatisticsCalculator {
     }
     
     var winPercentage: Int {
-        Int(round(Double(wins) / Double(totalGames) * 100.0))
+        if totalGames == 0 {
+            return 0
+        }
+        return Int(round(Double(wins) / Double(totalGames) * 100.0))
     }
     
     var winsByPattern: [String: Int] {

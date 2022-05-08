@@ -30,5 +30,11 @@ struct ContentView: View {
                     Label("Game History", systemImage: "clock")
                 }
         }
+        .onReceive(NotificationCenter.default.publisher(for: .didDeleteGame)) {_ in
+            // Start deleting game - AFTER view has been dismissed
+            DispatchQueue.main.asyncAfter(deadline: .now() + TimeInterval(1)) {
+                try? viewContext.save()
+            }
+        }
     }
 }

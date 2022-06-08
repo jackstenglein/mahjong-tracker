@@ -10,18 +10,22 @@ import SwiftUI
 
 struct DecimalTextField: UIViewRepresentable {
     
-    var placeholder: String
+    var placeholder0: String
+    var placeholder1: String
+    @Binding var placeholderIndex: Int
     @Binding var text: String
     
-    init(_ placeholder: String, text: Binding<String>) {
-        self.placeholder = placeholder
+    init(_ placeholder0: String, _ placeholder1: String, placeholderIndex: Binding<Int>, text: Binding<String>) {
+        self.placeholder0 = placeholder0
+        self.placeholder1 = placeholder1
+        self._placeholderIndex = placeholderIndex
         self._text = text
     }
     
     func makeUIView(context: Context) -> UITextField {
         let textfield = UITextField()
         
-        textfield.placeholder = placeholder
+        textfield.placeholder = placeholderIndex == 1 ? placeholder1 : placeholder0
         textfield.keyboardType = .decimalPad
         textfield.delegate = context.coordinator
         
@@ -36,6 +40,7 @@ struct DecimalTextField: UIViewRepresentable {
     
     func updateUIView(_ uiView: UITextField, context: Context) {
         uiView.text = text
+        uiView.placeholder = placeholderIndex == 1 ? placeholder1 : placeholder0
     }
     
     func makeCoordinator() -> Coordinator {

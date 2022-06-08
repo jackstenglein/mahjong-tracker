@@ -73,7 +73,7 @@ struct EditGame: View {
                 }
                 
                 Section(header: Text(isWin == 1 ? "Profit" : "Loss")) {
-                    DecimalTextField(isWin == 1 ? "Profit" : "Loss", text: $profitOverride)
+                    DecimalTextField("Loss", "Profit", placeholderIndex: $isWin, text: $profitOverride)
                 }
                 
                 Section(footer: saveFooter) {

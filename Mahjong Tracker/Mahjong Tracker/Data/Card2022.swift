@@ -28,7 +28,7 @@ let card2022 = Card(id: "84a62850-5ac8-4864-9c05-70cd447349bc", year: "2022", gr
                 Component(text: "FFFF", color: Color.black),
                 Component(text: "2022", color: Color.green),
                 Component(text: "222", color: Color.red),
-                Component(text: "2222", color: Color.black),
+                Component(text: "222", color: Color.black),
             ]),
             Pattern(id: "cad61826-2e9a-44f9-a2b8-c21e15e1a78e", description: "Any 1 Suit", value: 30, isConcealed: true, components: [
                 Component(text: "NN", color: Color.black),

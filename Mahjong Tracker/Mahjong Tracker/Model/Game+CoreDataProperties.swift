@@ -17,6 +17,7 @@ extension Game {
     @NSManaged var id: UUID
     @NSManaged var date: Date
     @NSManaged var isWin: Bool
+    @NSManaged var isWall: Bool
     
     @NSManaged var cardId: String
     @NSManaged var patternId: String

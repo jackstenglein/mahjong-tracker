@@ -8,13 +8,13 @@
 import Foundation
 
 
-public struct Group: Identifiable {
+public struct Group: Identifiable, Hashable {
     public let id: String
     let title: String
     let patterns: [Pattern]
 }
 
-public struct Card: Identifiable {
+public struct Card: Identifiable, Hashable {    
     public let id: String
     let year: String
     let groups: [Group]

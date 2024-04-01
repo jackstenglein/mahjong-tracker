@@ -11,11 +11,12 @@ struct PatternPicker: View {
     
     @Environment(\.dismiss) private var dismiss
     
+    @Binding var card: Card
     @Binding var pattern: Pattern?
     
     var body: some View {
         Form {
-            ForEach(card2023.groups) { g in
+            ForEach(card.groups) { g in
                 Section(header: Text(g.title)) {
                     Picker("", selection: $pattern) {
                         ForEach(g.patterns) { p in
@@ -36,6 +37,6 @@ struct PatternPicker: View {
 
 struct PatternPicker_Previews: PreviewProvider {
     static var previews: some View {
-        PatternPicker(pattern: .constant(nil))
+        PatternPicker(card: .constant(card2024), pattern: .constant(nil))
     }
 }

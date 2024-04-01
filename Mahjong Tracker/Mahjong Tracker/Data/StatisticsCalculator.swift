@@ -50,12 +50,22 @@ struct StatisticsCalculator {
         }
     }
     
+    private var wallsByCard: [String: Int] {
+        return countGamesByCard { g in
+            return g.isWall
+        }
+    }
+    
     func wins(cardYear: String) -> Int {
         return winsByCard[cardYear] ?? 0
     }
     
+    func walls(cardYear: String) -> Int {
+        return wallsByCard[cardYear] ?? 0
+    }
+    
     func losses(cardYear: String) -> Int {
-        return (totalGamesByCard[cardYear] ?? 0) - (winsByCard[cardYear] ?? 0)
+        return (totalGamesByCard[cardYear] ?? 0) - (winsByCard[cardYear] ?? 0) - (wallsByCard[cardYear] ?? 0)
     }
     
     func winPercentage(cardYear: String) -> Int {
@@ -155,14 +165,14 @@ struct StatisticsCalculator {
         return concealedJokerlessWinsByCard[cardYear] ?? 0
     }
     
-    private var discardWinsByCard: [String: Int] {
+    private var selfDrawnWinsByCard: [String: Int] {
         return countGamesByCard { g in
-            return g.isWin && g.isWinOnDiscard
+            return g.isWin && !g.isWinOnDiscard
         }
     }
     
-    func discardWins(cardYear: String) -> Int {
-        return discardWinsByCard[cardYear] ?? 0
+    func selfDrawnWins(cardYear: String) -> Int {
+        return selfDrawnWinsByCard[cardYear] ?? 0
     }
     
     private var discardLossesByCard: [String: Int] {

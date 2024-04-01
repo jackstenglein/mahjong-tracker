@@ -35,6 +35,7 @@
 		C9AB20AC2825C9EC00700142 /* StatisticsCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AB20AB2825C9EC00700142 /* StatisticsCalculator.swift */; };
 		C9AB20AE2825D05700700142 /* PatternWinList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AB20AD2825D05700700142 /* PatternWinList.swift */; };
 		C9B5C8522BBB02E000E1BCD6 /* Card2024.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B5C8512BBB02E000E1BCD6 /* Card2024.swift */; };
+		C9B5C8542BBB1DF700E1BCD6 /* CardPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B5C8532BBB1DF700E1BCD6 /* CardPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		C9AB20AB2825C9EC00700142 /* StatisticsCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsCalculator.swift; sourceTree = "<group>"; };
 		C9AB20AD2825D05700700142 /* PatternWinList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternWinList.swift; sourceTree = "<group>"; };
 		C9B5C8512BBB02E000E1BCD6 /* Card2024.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card2024.swift; sourceTree = "<group>"; };
+		C9B5C8532BBB1DF700E1BCD6 /* CardPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +211,7 @@
 				C9AB20A72825C36C00700142 /* NumberTextField.swift */,
 				C9AB20A92825C96B00700142 /* DetailedWinStatistics.swift */,
 				C9AB20AD2825D05700700142 /* PatternWinList.swift */,
+				C9B5C8532BBB1DF700E1BCD6 /* CardPicker.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9B5C8542BBB1DF700E1BCD6 /* CardPicker.swift in Sources */,
 				C986A8842824B7EC00FB0A74 /* Persistence.swift in Sources */,
 				C986A8B22824BA7F00FB0A74 /* Card2022.swift in Sources */,
 				C9AB20AC2825C9EC00700142 /* StatisticsCalculator.swift in Sources */,

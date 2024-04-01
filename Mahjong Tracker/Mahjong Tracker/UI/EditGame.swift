@@ -7,18 +7,23 @@
 
 import SwiftUI
 
+enum Result {
+    case Win, Loss, Wall
+}
+
 struct EditGame: View {
     
     @Environment(\.dismiss) private var dismiss
     
     @Environment(\.managedObjectContext) private var moc
     
-    @State private var isWin = 1
+    @State private var result = Result.Win
     @State private var date = Date()
+    @State private var card: Card = card2024
     @State private var pattern: Pattern? = nil
     @State private var isConcealed = false
     @State private var isJokerless = false
-    @State private var isWinOnDiscard = false
+    @State private var isWinSelfDrawn = false
     @State private var isDiscarder = false
     @State private var profitOverride: String = ""
     @State private var error: String = ""
@@ -34,12 +39,12 @@ struct EditGame: View {
             self.game = nil
             return
         }
-        _isWin = State(initialValue: g.isWin ? 1 : 0)
+        _result = State(initialValue: g.isWin ? Result.Win : g.isWall ? Result.Wall : Result.Loss)
         _date = State(initialValue: g.date)
         _pattern = State(initialValue: g.pattern)
         _isConcealed = State(initialValue: g.isConcealed)
         _isJokerless = State(initialValue: g.isJokerless)
-        _isWinOnDiscard = State(initialValue: g.isWin ? g.isWinOnDiscard : false)
+        _isWinSelfDrawn = State(initialValue: g.isWin ? !g.isWinOnDiscard : false)
         _isDiscarder = State(initialValue: g.isWin ? false : g.isDiscarder)
         _profitOverride = State(initialValue: String(format: "$%.2f", g.totalWinnings))
         self.game = g
@@ -48,9 +53,10 @@ struct EditGame: View {
     var body: some View {
             Form {
                 Section(header: Text("General")) {
-                    Picker("Game Result", selection: $isWin) {
-                        Text("Win").tag(1)
-                        Text("Loss").tag(0)
+                    Picker("Game Result", selection: $result) {
+                        Text("Win").tag(Result.Win)
+                        Text("Loss").tag(Result.Loss)
+                        Text("Wall").tag(Result.Wall)
                     }
                     .pickerStyle(.segmented)
                 
@@ -58,22 +64,27 @@ struct EditGame: View {
                         .datePickerStyle(.compact)
                 }
                 
-                Section(header: Text("Hand")) {
-                    NavigationLink(destination: PatternPicker(pattern: $pattern)) {
-                        Text(pattern?.attributedTitle ?? "Pattern")
-                    }
-                    Toggle("Concealed", isOn: $isConcealed)
-                    Toggle("Jokerless", isOn: $isJokerless)
-                    
-                    if isWin == 1 {
-                        Toggle("Win on Discard", isOn: $isWinOnDiscard)
-                    } else {
-                        Toggle("Discarded Final Tile", isOn: $isDiscarder)
+                if result != Result.Wall {
+                    Section(header: Text("Hand")) {
+                        NavigationLink(destination: CardPicker(card: $card)) {
+                            Text("Card: " + card.year)
+                        }
+                        NavigationLink(destination: PatternPicker(card: $card, pattern: $pattern)) {
+                            Text(pattern?.attributedTitle ?? "Pattern")
+                        }
+                        Toggle("Concealed", isOn: $isConcealed)
+                        Toggle("Jokerless", isOn: $isJokerless)
+                        
+                        if result == Result.Win {
+                            Toggle("Win Self-Drawn", isOn: $isWinSelfDrawn)
+                        } else {
+                            Toggle("Discarded Final Tile", isOn: $isDiscarder)
+                        }
                     }
                 }
                 
-                Section(header: Text(isWin == 1 ? "Profit" : "Loss")) {
-                    DecimalTextField("Loss", "Profit", placeholderIndex: $isWin, text: $profitOverride)
+                Section(header: Text(result == Result.Win ? "Profit" : "Loss")) {
+                    DecimalTextField("Loss", "Profit", placeholderIndex: result == Result.Win ? .constant(1) : .constant(0), text: $profitOverride)
                 }
                 
                 Section(footer: saveFooter) {
@@ -114,13 +125,13 @@ struct EditGame: View {
     
     func save() {
         
-        if isWin == 1 && pattern == nil {
+        if result == Result.Win && pattern == nil {
             error = "Pattern is required"
             return
         }
         
         if profitOverride.count == 0 {
-            if isWin == 1 {
+            if result == Result.Win {
                 error = "Profit is required"
             } else {
                 error = "Loss is required"
@@ -137,12 +148,13 @@ struct EditGame: View {
             g = game!
         }
         
-        g.isWin = isWin == 1
+        g.isWin = result == Result.Win
+        g.isWall = result == Result.Wall
         g.date = date
         g.patternId = pattern != nil ? pattern!.id : "NONE"
         g.isConcealed = isConcealed
         g.isJokerless = isJokerless
-        g.isWinOnDiscard = g.isWin && isWinOnDiscard
+        g.isWinOnDiscard = g.isWin && !isWinSelfDrawn
         g.isDiscarder = !g.isWin && isDiscarder
         g.totalWinnings = abs(Float(profitOverride.replacingOccurrences(of: "$", with: ""))!)
         
@@ -160,13 +172,6 @@ struct EditGame: View {
         moc.delete(game!)
         NotificationCenter.default.post(name: .didDeleteGame, object: nil)
         dismiss()
-        
-//        print("Deleting")
-
-//        print("Saving")
-//        try? moc.save()
-//        print("Dismissing")
-//        dismiss()
     }
 }
 

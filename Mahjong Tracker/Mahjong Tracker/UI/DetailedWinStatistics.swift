@@ -40,6 +40,12 @@ struct DetailedWinStatistics: View {
                 }
                 
                 HStack {
+                    Text("Walls")
+                    Spacer()
+                    Text(String(format: "%d", calculator.walls(cardYear: selectedCard)))
+                }
+                
+                HStack {
                     Text("Win Percentage")
                     Spacer()
                     Text(String(format: "%d%%", calculator.winPercentage(cardYear: selectedCard)))
@@ -73,9 +79,9 @@ struct DetailedWinStatistics: View {
                 }
                 
                 HStack {
-                    Text("Wins by Discard")
+                    Text("Self-Drawn Wins")
                     Spacer()
-                    Text(String(format: "%d", calculator.discardWins(cardYear: selectedCard)))
+                    Text(String(format: "%d", calculator.selfDrawnWins(cardYear: selectedCard)))
                 }
                 
                 HStack {

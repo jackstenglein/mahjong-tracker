@@ -39,6 +39,7 @@ struct EditGame: View {
             self.game = nil
             return
         }
+        _card = State(initialValue: cardsById[g.cardId] ?? card2024)
         _result = State(initialValue: g.isWin ? Result.Win : g.isWall ? Result.Wall : Result.Loss)
         _date = State(initialValue: g.date)
         _pattern = State(initialValue: g.pattern)
@@ -62,13 +63,14 @@ struct EditGame: View {
                 
                     DatePicker("Date", selection: $date, displayedComponents: [.date])
                         .datePickerStyle(.compact)
+                    
+                    NavigationLink(destination: CardPicker(card: $card)) {
+                        Text("Card: " + card.year)
+                    }
                 }
                 
                 if result != Result.Wall {
                     Section(header: Text("Hand")) {
-                        NavigationLink(destination: CardPicker(card: $card)) {
-                            Text("Card: " + card.year)
-                        }
                         NavigationLink(destination: PatternPicker(card: $card, pattern: $pattern)) {
                             Text(pattern?.attributedTitle ?? "Pattern")
                         }
@@ -143,11 +145,11 @@ struct EditGame: View {
         if game == nil {
             g = Game(context: moc)
             g.id = UUID()
-            g.cardId = card2023.id
         } else {
             g = game!
         }
         
+        g.cardId = card.id
         g.isWin = result == Result.Win
         g.isWall = result == Result.Wall
         g.date = date

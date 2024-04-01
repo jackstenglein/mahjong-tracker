@@ -65,7 +65,7 @@ struct Statistics: View {
                 Spacer()
                 
                 VStack {
-                    Text(String(format: "%d%%", calculator.winPercentage(cardYear: selectedCard)))
+                    Text(String(format: "%d", calculator.winPercentage(cardYear: selectedCard)))
                         .font(.system(size: 40).bold())
                         .padding(.bottom, 5)
                     Text("WIN%")

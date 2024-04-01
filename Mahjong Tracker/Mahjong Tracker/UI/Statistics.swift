@@ -11,18 +11,31 @@ import LineChartView
 struct Statistics: View {
     
     let games: FetchedResults<Game>
-    let calculator: StatisticsCalculator
+    
+    @State private var selectedCard = AllCards
     
     init(games: FetchedResults<Game>) {
         self.games = games
-        calculator = StatisticsCalculator(games: games)
+    }
+    
+    var selectedGames: Array<Game> {
+        return self.games.filter { g in
+            if (selectedCard == AllCards) {
+                return true
+            }
+            return g.cardId == cardsByYear[selectedCard]?.id
+        }
+    }
+    
+    var calculator: StatisticsCalculator {
+        return StatisticsCalculator(games: selectedGames)
     }
     
     var winLossBubble: some View {
-        NavigationLink(destination: DetailedWinStatistics(calculator: calculator)) {
+        NavigationLink(destination: DetailedWinStatistics(calculator: calculator, selectedCard: $selectedCard)) {
             HStack {
                 VStack {
-                    Text(String(format: "%d", calculator.wins))
+                    Text(String(format: "%d", calculator.wins(cardYear: selectedCard)))
                         .font(.system(size: 40).bold())
                         .padding(.bottom, 5)
                     Text("WINS")
@@ -32,7 +45,7 @@ struct Statistics: View {
                 Spacer()
                 
                 VStack {
-                    Text(String(format: "%d", calculator.losses))
+                    Text(String(format: "%d", calculator.losses(cardYear: selectedCard)))
                         .font(.system(size: 40).bold())
                         .padding(.bottom, 5)
                     Text("LOSSES")
@@ -42,7 +55,7 @@ struct Statistics: View {
                 Spacer()
                 
                 VStack {
-                    Text(String(format: "%d%%", calculator.winPercentage))
+                    Text(String(format: "%d%%", calculator.winPercentage(cardYear: selectedCard)))
                         .font(.system(size: 40).bold())
                         .padding(.bottom, 5)
                     Text("WIN%")
@@ -57,10 +70,10 @@ struct Statistics: View {
     }
     
     var patternBubble: some View {
-        NavigationLink(destination: PatternWinList(calculator: calculator)) {
+        NavigationLink(destination: PatternWinList(calculator: calculator, selectedCard: $selectedCard)) {
         HStack {
             VStack {
-                Text(String(format: "%d / %d", calculator.winsByPattern.count, card2022.allPatterns.count))
+                Text(String(format: "%d / %d", calculator.wonPatterns(cardYear: selectedCard), calculator.totalPatterns(cardYear: selectedCard)))
                     .font(.system(size: 40).bold())
                     .padding(.bottom, 5)
                 Text("PATTERNS")
@@ -69,7 +82,7 @@ struct Statistics: View {
             
             Spacer()
             
-            Text(String(format: "%d%%", Int(round(Double(calculator.winsByPattern.count) / Double(card2022.allPatterns.count) * 100))))
+            Text(String(format: "%d%%", Int(round(Double(calculator.wonPatterns(cardYear: selectedCard)) / Double(calculator.totalPatterns(cardYear: selectedCard)) * 100))))
                 .font(.system(size: 40).bold())
                 .padding(.bottom, 5)
             
@@ -85,8 +98,17 @@ struct Statistics: View {
         NavigationView {
             ScrollView(showsIndicators: false) {
                 VStack(alignment: .leading, spacing: 16) {
-                    winLossBubble
                     
+                    HStack {
+                        Text("Card:")
+                        Picker("Card", selection: $selectedCard) {
+                            ForEach(cardYears, id: \.self) {
+                                Text($0)
+                            }
+                        }
+                    }
+                    
+                    winLossBubble
                     patternBubble
                     
                     VStack(alignment: .leading) {
@@ -121,7 +143,7 @@ struct Statistics: View {
         var dataLabels: [String] = []
         var dateToIncome: [Date: Double] = [:]
         
-        for game in games {
+        for game in selectedGames {
             let date = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: game.date)
             let income: Double = dateToIncome[date!] ?? 0
             

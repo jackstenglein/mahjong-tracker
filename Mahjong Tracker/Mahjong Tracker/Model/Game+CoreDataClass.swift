@@ -11,7 +11,11 @@ import CoreData
 class Game: NSManagedObject, Identifiable {
     
     var pattern: Pattern? {
-        card2022.getPattern(id: patternId)
+        return card?.getPattern(id: patternId)
+    }
+    
+    var card: Card? {
+        return cardsById[cardId]
     }
     
     var attributedValue: AttributedString {

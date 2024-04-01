@@ -35,7 +35,7 @@ struct EditGame: View {
             return
         }
         _isWin = State(initialValue: g.isWin ? 1 : 0)
-        _date = State(initialValue: g.date) // TODO: replace with actual date
+        _date = State(initialValue: g.date)
         _pattern = State(initialValue: g.pattern)
         _isConcealed = State(initialValue: g.isConcealed)
         _isJokerless = State(initialValue: g.isJokerless)
@@ -114,7 +114,7 @@ struct EditGame: View {
     
     func save() {
         
-        if pattern == nil {
+        if isWin == 1 && pattern == nil {
             error = "Pattern is required"
             return
         }
@@ -132,13 +132,14 @@ struct EditGame: View {
         if game == nil {
             g = Game(context: moc)
             g.id = UUID()
+            g.cardId = card2023.id
         } else {
             g = game!
         }
         
         g.isWin = isWin == 1
         g.date = date
-        g.patternId = pattern!.id
+        g.patternId = pattern != nil ? pattern!.id : "NONE"
         g.isConcealed = isConcealed
         g.isJokerless = isJokerless
         g.isWinOnDiscard = g.isWin && isWinOnDiscard

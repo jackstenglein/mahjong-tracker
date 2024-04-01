@@ -17,118 +17,173 @@ struct WinsByPatternListItem: Identifiable {
 
 struct StatisticsCalculator {
     
-    let games: FetchedResults<Game>
+    let games: Array<Game>
     
-    var totalGames: Int {
-        return games.count
-    }
-    
-    var wins: Int {
-        var wins = 0
+    func countGamesByCard(predicate: (_: Game) -> Bool) -> [String: Int] {
+        var result: [String: Int] = [AllCards: 0]
         for game in games {
-            if game.isWin {
-                wins += 1
-            }
-        }
-        return wins
-    }
-    
-    var losses: Int {
-        return totalGames - wins
-    }
-    
-    var winPercentage: Int {
-        if totalGames == 0 {
-            return 0
-        }
-        return Int(round(Double(wins) / Double(totalGames) * 100.0))
-    }
-    
-    var winsByPattern: [String: Int] {
-        var winsByPattern: [String:Int] = [:]
-        for game in games {
-            if game.isWin {
-                guard let wins = winsByPattern[game.patternId] else {
-                    winsByPattern[game.patternId] = 1
+            if predicate(game) {
+                result[AllCards]! += 1
+                guard let count = result[game.card?.year ?? ""] else {
+                    result[game.card?.year ?? ""] = 1
                     continue
                 }
-                winsByPattern[game.patternId] = wins + 1
+                result[game.card?.year ?? ""] = count + 1
             }
         }
-        return winsByPattern
+        return result
     }
     
-    var netProfit: Float {
-        var profit: Float = 0
+    private var totalGamesByCard: Dictionary<String, Int> {
+        return countGamesByCard { g in
+            return true
+        }
+    }
+    
+    func totalGames(cardYear: String) -> Int {
+        return totalGamesByCard[cardYear] ?? 0
+    }
+    
+    private var winsByCard: [String: Int] {
+        return countGamesByCard { g in
+            return g.isWin
+        }
+    }
+    
+    func wins(cardYear: String) -> Int {
+        return winsByCard[cardYear] ?? 0
+    }
+    
+    func losses(cardYear: String) -> Int {
+        return (totalGamesByCard[cardYear] ?? 0) - (winsByCard[cardYear] ?? 0)
+    }
+    
+    func winPercentage(cardYear: String) -> Int {
+        let games = totalGamesByCard[cardYear] ?? 0
+        if games == 0 {
+            return 0
+        }
+        return Int(round(Double(winsByCard[cardYear] ?? 0) / Double(games) * 100.0))
+    }
+    
+    private var winsByPattern: [String: [String: Int]] {
+        var result: [String: [String:Int]] = [:]
         for game in games {
             if game.isWin {
-                profit += game.totalWinnings
-            } else {
-                profit -= game.totalWinnings
-            }
-        }
-        return profit
-    }
-    
-    var concealedWins: Int {
-        var result = 0
-        for game in games {
-            if game.isWin && game.isConcealed {
-                result += 1
+                let cardYear = game.card?.year ?? ""
+                var winsByPattern = result[cardYear] ?? [:]
+                let wins = winsByPattern[game.patternId] ?? 0
+                winsByPattern[game.patternId] = wins + 1
+                result[cardYear] = winsByPattern
             }
         }
         return result
     }
     
-    var jokerlessWins: Int {
-        var result = 0
-        for game in games {
-            if game.isWin && game.isJokerless {
-                result += 1
+    func wonPatterns(cardYear: String) -> Int {
+        if cardYear == AllCards {
+            var count = 0
+            for entry in winsByPattern {
+                count += entry.value.count
             }
+            return count
         }
-        return result
+        
+        return winsByPattern[cardYear]?.count ?? 0
     }
     
-    var concealedJokerlessWins: Int {
-        var result = 0
-        for game in games {
-            if game.isWin && game.isJokerless && game.isConcealed {
-                result += 1
+    func totalPatterns(cardYear: String) -> Int {
+        if cardYear == AllCards {
+            var count = 0
+            for card in cards {
+                count += card.allPatterns.count
             }
+            return count
         }
-        return result
+        return cardsByYear[cardYear]?.allPatterns.count ?? 0
     }
     
-    var discardWins: Int {
-        var result = 0
+    private var netProfitByCard: [String: Float] {
+        var profitByCard: [String: Float] = [AllCards: 0]
         for game in games {
-            if game.isWin && game.isWinOnDiscard {
-                result += 1
+            var profit = game.totalWinnings
+            if !game.isWin {
+                profit *= -1
             }
+            
+            profitByCard[AllCards]! += profit
+            guard let totalProfit = profitByCard[game.card?.year ?? ""] else {
+                profitByCard[game.card?.year ?? ""] = profit
+                continue
+            }
+            profitByCard[game.card?.year ?? ""] = totalProfit + profit
         }
-        return result
+        return profitByCard
     }
     
-    var discardLosses: Int {
-        var result = 0
-        for game in games {
-            if !game.isWin && game.isDiscarder {
-                result += 1
-            }
-        }
-        return result
+    func netProfit(cardYear: String) -> Float {
+        return netProfitByCard[cardYear] ?? 0
     }
     
-    var winsByPatternList: [WinsByPatternListItem] {
+    private var concealedWinsByCard: [String: Int] {
+        return countGamesByCard { g in
+            return g.isWin && g.isConcealed
+        }
+    }
+    
+    func concealedWins(cardYear: String) -> Int {
+        return concealedWinsByCard[cardYear] ?? 0
+    }
+    
+    private var jokerlessWinsByCard: [String: Int] {
+        return countGamesByCard { g in
+            return g.isWin && g.isJokerless
+        }
+    }
+    
+    func jokerlessWins(cardYear: String) -> Int {
+        return jokerlessWinsByCard[cardYear] ?? 0
+    }
+    
+    private var concealedJokerlessWinsByCard: [String: Int] {
+        return countGamesByCard { g in
+            return g.isWin && g.isConcealed && g.isJokerless
+        }
+    }
+    
+    func concealedJokerlessWins(cardYear: String) -> Int {
+        return concealedJokerlessWinsByCard[cardYear] ?? 0
+    }
+    
+    private var discardWinsByCard: [String: Int] {
+        return countGamesByCard { g in
+            return g.isWin && g.isWinOnDiscard
+        }
+    }
+    
+    func discardWins(cardYear: String) -> Int {
+        return discardWinsByCard[cardYear] ?? 0
+    }
+    
+    private var discardLossesByCard: [String: Int] {
+        return countGamesByCard { g in
+            return !g.isWin && g.isDiscarder
+        }
+    }
+    
+    func discardLosses(cardYear: String) -> Int {
+        return discardLossesByCard[cardYear] ?? 0
+    }
+    
+    func winsByPatternList(card: Card) -> [WinsByPatternListItem] {
         var items: [WinsByPatternListItem] = []
         
-        for group in card2022.groups {
+        for group in card.groups {
             var children: [WinsByPatternListItem] = []
             var groupWins = 0
             
             for pattern in group.patterns {
-                let wins = winsByPattern[pattern.id] ?? 0
+                let wins = winsByPattern[card.year]?[pattern.id] ?? 0
                 groupWins += wins
                 children.append(WinsByPatternListItem(id: pattern.id, displayName: pattern.attributedTitle, value: wins, items: nil))
             }
@@ -137,5 +192,20 @@ struct StatisticsCalculator {
         }
         
         return items
+    }
+    
+    func winsByPatternList(cardYear: String) -> [WinsByPatternListItem] {
+       if cardYear == AllCards {
+            var items: [WinsByPatternListItem] = []
+            for card in cards {
+                items.append(contentsOf: winsByPatternList(card: card))
+            }
+            return items
+        }
+        
+        guard let selectedCard = cardsByYear[cardYear] else {
+            return []
+        }
+        return winsByPatternList(card: selectedCard)
     }
 }

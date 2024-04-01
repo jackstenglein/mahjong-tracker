@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 
-let card2022 = Card(id: "84a62850-5ac8-4864-9c05-70cd447349bc", year: "2022", groups: [
+let card2022 = Card(id: "", year: "2022", groups: [
     Group(id: "6908e514-c89d-4b22-a623-267769983301", title: "2022", patterns:
         [
             Pattern(id: "c8ee0c04-2400-46ea-b8ad-ede683aeb5aa", description: "2022 in Any 1 Suit, Dragons - Greens and Reds Only", value: 25, isConcealed: false, components: [

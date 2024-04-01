@@ -14,8 +14,8 @@ public struct Group: Identifiable {
     let patterns: [Pattern]
 }
 
-public struct Card {
-    let id: String
+public struct Card: Identifiable {
+    public let id: String
     let year: String
     let groups: [Group]
     

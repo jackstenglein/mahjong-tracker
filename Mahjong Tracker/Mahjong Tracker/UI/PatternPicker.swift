@@ -15,7 +15,7 @@ struct PatternPicker: View {
     
     var body: some View {
         Form {
-            ForEach(card2022.groups) { g in
+            ForEach(card2023.groups) { g in
                 Section(header: Text(g.title)) {
                     Picker("", selection: $pattern) {
                         ForEach(g.patterns) { p in

@@ -64,8 +64,10 @@ struct EditGame: View {
                     DatePicker("Date", selection: $date, displayedComponents: [.date])
                         .datePickerStyle(.compact)
                     
-                    NavigationLink(destination: CardPicker(card: $card)) {
-                        Text("Card: " + card.year)
+                    Picker("Card", selection: $card) {
+                        ForEach(cards) { c in
+                            Text(c.year).tag(c)
+                        }
                     }
                 }
                 

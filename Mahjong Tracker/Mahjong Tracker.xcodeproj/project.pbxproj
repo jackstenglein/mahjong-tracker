@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C93075B22D95FB02005FA121 /* Card2025.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93075B12D95FAF7005FA121 /* Card2025.swift */; };
 		C94CCEC329E7051F00B7AA0D /* Card2023.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94CCEC229E7051F00B7AA0D /* Card2023.swift */; };
 		C94CCEC529E7371800B7AA0D /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94CCEC429E7371800B7AA0D /* Cards.swift */; };
 		C986A87B2824B7E800FB0A74 /* Mahjong_TrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986A87A2824B7E800FB0A74 /* Mahjong_TrackerApp.swift */; };
@@ -56,6 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C93075B12D95FAF7005FA121 /* Card2025.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card2025.swift; sourceTree = "<group>"; };
 		C94CCEC229E7051F00B7AA0D /* Card2023.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card2023.swift; sourceTree = "<group>"; };
 		C94CCEC429E7371800B7AA0D /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
 		C986A8772824B7E800FB0A74 /* Mahjong Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mahjong Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -192,6 +194,7 @@
 		C986A8AE2824B9F800FB0A74 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				C93075B12D95FAF7005FA121 /* Card2025.swift */,
 				C986A8B12824BA7F00FB0A74 /* Card2022.swift */,
 				C9AB20AB2825C9EC00700142 /* StatisticsCalculator.swift */,
 				C94CCEC229E7051F00B7AA0D /* Card2023.swift */,
@@ -364,6 +367,7 @@
 				C986A8BB2824CA1400FB0A74 /* EditGame.swift in Sources */,
 				C986A8B92824BFD400FB0A74 /* GameHistory.swift in Sources */,
 				C986A8B02824BA1500FB0A74 /* Card.swift in Sources */,
+				C93075B22D95FB02005FA121 /* Card2025.swift in Sources */,
 				C986A8C42824F6C500FB0A74 /* Game+CoreDataProperties.swift in Sources */,
 				C986A8AB2824B8AF00FB0A74 /* Pattern.swift in Sources */,
 				C9AB20AA2825C96B00700142 /* DetailedWinStatistics.swift in Sources */,

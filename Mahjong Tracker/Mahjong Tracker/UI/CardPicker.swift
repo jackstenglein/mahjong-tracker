@@ -29,5 +29,5 @@ struct CardPicker: View {
 }
 
 #Preview {
-    CardPicker(card: .constant(card2024))
+    CardPicker(card: .constant(card2025))
 }

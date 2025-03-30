@@ -19,7 +19,7 @@ struct EditGame: View {
     
     @State private var result = Result.Win
     @State private var date = Date()
-    @State private var card: Card = card2024
+    @State private var card: Card = card2025
     @State private var pattern: Pattern? = nil
     @State private var isConcealed = false
     @State private var isJokerless = false
@@ -39,7 +39,7 @@ struct EditGame: View {
             self.game = nil
             return
         }
-        _card = State(initialValue: cardsById[g.cardId] ?? card2024)
+        _card = State(initialValue: cardsById[g.cardId] ?? card2025)
         _result = State(initialValue: g.isWin ? Result.Win : g.isWall ? Result.Wall : Result.Loss)
         _date = State(initialValue: g.date)
         _pattern = State(initialValue: g.pattern)

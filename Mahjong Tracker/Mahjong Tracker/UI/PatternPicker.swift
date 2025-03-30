@@ -37,6 +37,6 @@ struct PatternPicker: View {
 
 struct PatternPicker_Previews: PreviewProvider {
     static var previews: some View {
-        PatternPicker(card: .constant(card2024), pattern: .constant(nil))
+        PatternPicker(card: .constant(card2025), pattern: .constant(nil))
     }
 }

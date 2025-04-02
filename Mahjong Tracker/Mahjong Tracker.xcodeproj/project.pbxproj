@@ -194,12 +194,12 @@
 		C986A8AE2824B9F800FB0A74 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				C94CCEC429E7371800B7AA0D /* Cards.swift */,
 				C93075B12D95FAF7005FA121 /* Card2025.swift */,
+				C9B5C8512BBB02E000E1BCD6 /* Card2024.swift */,
+				C94CCEC229E7051F00B7AA0D /* Card2023.swift */,
 				C986A8B12824BA7F00FB0A74 /* Card2022.swift */,
 				C9AB20AB2825C9EC00700142 /* StatisticsCalculator.swift */,
-				C94CCEC229E7051F00B7AA0D /* Card2023.swift */,
-				C94CCEC429E7371800B7AA0D /* Cards.swift */,
-				C9B5C8512BBB02E000E1BCD6 /* Card2024.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -286,7 +286,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1330;
-				LastUpgradeCheck = 1530;
+				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					C986A8762824B7E800FB0A74 = {
 						CreatedOnToolsVersion = 13.3.1;
@@ -539,7 +539,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Mahjong Tracker/Preview Content\"";
 				DEVELOPMENT_TEAM = HQY86268B7;
 				ENABLE_PREVIEWS = YES;
@@ -555,7 +555,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jackstenglein.Mahjong-Tracker";
 				PRODUCT_NAME = "Mahjong Tracker";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -570,7 +570,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Mahjong Tracker/Preview Content\"";
 				DEVELOPMENT_TEAM = HQY86268B7;
 				ENABLE_PREVIEWS = YES;
@@ -586,7 +586,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jackstenglein.Mahjong-Tracker";
 				PRODUCT_NAME = "Mahjong Tracker";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -598,7 +598,6 @@
 		C986A8A42824B7EC00FB0A74 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -618,7 +617,6 @@
 		C986A8A52824B7EC00FB0A74 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -638,7 +636,6 @@
 		C986A8A72824B7EC00FB0A74 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PHLWVAL8GP;
@@ -656,7 +653,6 @@
 		C986A8A82824B7EC00FB0A74 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PHLWVAL8GP;

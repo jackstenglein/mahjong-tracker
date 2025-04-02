@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-let card2025 = Card(id: "", year: "2025", groups: [
+let card2025 = Card(id: "c38c6cbf-3c41-47ad-8367-ed161033b07c", year: "2025", groups: [
     Group(id: "5e1cf4f8-58a2-49db-a368-6180a229f74f", title: "2025", patterns: [
         Pattern(id: "7ed68334-6ed6-480e-879a-c9d1edfe2a24", description: "Any 3 Suits, Like Pung 2s or 5s in Opp. Suits", value: 25, isConcealed: false, components: [
             Component(text: "FFFF", color: .black),
@@ -88,7 +88,7 @@ let card2025 = Card(id: "", year: "2025", groups: [
     ]),
     
     Group(id: "f3a19b2b-1577-4058-a373-f92d5ddb97ed", title: "Any Like Numbers", patterns: [
-        Pattern(id: "", description: "Any 3 Suits", value: 25, isConcealed: false, components: [
+        Pattern(id: "f4c7e6a6-bcf5-4205-befb-21b8c6c49a4d", description: "Any 3 Suits", value: 25, isConcealed: false, components: [
             Component(text: "FF", color: .black),
             Component(text: "1111 D", color: .green),
             Component(text: "1111 D", color: .red),

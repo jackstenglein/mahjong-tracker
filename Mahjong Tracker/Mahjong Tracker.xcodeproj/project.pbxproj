@@ -10,6 +10,7 @@
 		C93075B22D95FB02005FA121 /* Card2025.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93075B12D95FAF7005FA121 /* Card2025.swift */; };
 		C94CCEC329E7051F00B7AA0D /* Card2023.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94CCEC229E7051F00B7AA0D /* Card2023.swift */; };
 		C94CCEC529E7371800B7AA0D /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94CCEC429E7371800B7AA0D /* Cards.swift */; };
+		C95CB0AC2F84791000DC8427 /* Card2026.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95CB0AB2F84790C00DC8427 /* Card2026.swift */; };
 		C986A87B2824B7E800FB0A74 /* Mahjong_TrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986A87A2824B7E800FB0A74 /* Mahjong_TrackerApp.swift */; };
 		C986A87D2824B7E800FB0A74 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986A87C2824B7E800FB0A74 /* ContentView.swift */; };
 		C986A87F2824B7EC00FB0A74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C986A87E2824B7EC00FB0A74 /* Assets.xcassets */; };
@@ -60,6 +61,7 @@
 		C93075B12D95FAF7005FA121 /* Card2025.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card2025.swift; sourceTree = "<group>"; };
 		C94CCEC229E7051F00B7AA0D /* Card2023.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card2023.swift; sourceTree = "<group>"; };
 		C94CCEC429E7371800B7AA0D /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
+		C95CB0AB2F84790C00DC8427 /* Card2026.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card2026.swift; sourceTree = "<group>"; };
 		C986A8772824B7E800FB0A74 /* Mahjong Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mahjong Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C986A87A2824B7E800FB0A74 /* Mahjong_TrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mahjong_TrackerApp.swift; sourceTree = "<group>"; };
 		C986A87C2824B7E800FB0A74 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				C94CCEC429E7371800B7AA0D /* Cards.swift */,
+				C95CB0AB2F84790C00DC8427 /* Card2026.swift */,
 				C93075B12D95FAF7005FA121 /* Card2025.swift */,
 				C9B5C8512BBB02E000E1BCD6 /* Card2024.swift */,
 				C94CCEC229E7051F00B7AA0D /* Card2023.swift */,
@@ -358,6 +361,7 @@
 				C9B5C8542BBB1DF700E1BCD6 /* CardPicker.swift in Sources */,
 				C986A8842824B7EC00FB0A74 /* Persistence.swift in Sources */,
 				C986A8B22824BA7F00FB0A74 /* Card2022.swift in Sources */,
+				C95CB0AC2F84791000DC8427 /* Card2026.swift in Sources */,
 				C9AB20AC2825C9EC00700142 /* StatisticsCalculator.swift in Sources */,
 				C94CCEC529E7371800B7AA0D /* Cards.swift in Sources */,
 				C9AB20A82825C36C00700142 /* NumberTextField.swift in Sources */,
@@ -555,7 +559,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.1;
+				MARKETING_VERSION = 1.3.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jackstenglein.Mahjong-Tracker";
 				PRODUCT_NAME = "Mahjong Tracker";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -586,7 +590,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.1;
+				MARKETING_VERSION = 1.3.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jackstenglein.Mahjong-Tracker";
 				PRODUCT_NAME = "Mahjong Tracker";
 				SWIFT_EMIT_LOC_STRINGS = YES;

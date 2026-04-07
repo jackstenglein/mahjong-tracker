@@ -8,6 +8,7 @@
 import Foundation
 
 let cardsById = [
+    card2026.id: card2026,
     card2025.id: card2025,
     card2024.id: card2024,
     card2023.id: card2023,
@@ -18,6 +19,7 @@ let AllCards = "All"
 
 let cardYears = [
     AllCards,
+    card2026.year,
     card2025.year,
     card2024.year,
     card2023.year,
@@ -25,6 +27,7 @@ let cardYears = [
 ]
 
 let cardsByYear = [
+    card2026.year: card2026,
     card2025.year: card2025,
     card2024.year: card2024,
     card2023.year: card2023,
@@ -32,6 +35,7 @@ let cardsByYear = [
 ]
 
 let cards = [
+    card2026,
     card2025,
     card2024,
     card2023,

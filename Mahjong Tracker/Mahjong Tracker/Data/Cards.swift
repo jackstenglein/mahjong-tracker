@@ -41,3 +41,5 @@ let cards = [
     card2023,
     card2022,
 ]
+
+let defaultCard = card2026
